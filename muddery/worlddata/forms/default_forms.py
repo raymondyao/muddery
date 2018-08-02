@@ -769,6 +769,15 @@ class EquipmentsForm(ObjectsForm):
         model = CM.EQUIPMENTS.model
         fields = '__all__'
 
+class EquipmentTypesForm(forms.ModelForm):
+    def __init__(self,*args,**kwargs):
+        super(EquipmentTypesForm,self).__init__(*args,**kwargs)
+        localize_form_fields(self)
+
+    class Meta:
+        model=CM.EQUIPMENT_TYPES.model
+        fields='__all__'
+
 
 class EventDataForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
